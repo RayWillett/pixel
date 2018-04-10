@@ -1,0 +1,11 @@
+import { injectedMain } from './inject'
+
+chrome.extension.sendMessage({}, function(response) {
+	var readyStateCheckInterval = setInterval(function() {
+	if (document.readyState === "complete") {
+		clearInterval(readyStateCheckInterval);
+		injectedMain()
+		console.log('asdf')
+	}
+	}, 10);
+});

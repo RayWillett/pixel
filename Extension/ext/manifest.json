@@ -11,7 +11,7 @@
   },
   "default_locale": "en",
   "background": {
-    "page": "src/bg/background.html",
+    "page": "bg/background.html",
     "persistent": true
   },
   "permissions": [
@@ -20,10 +20,10 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.google.com/*"
+        "https://*/*"
       ],
       "js": [
-        "src/inject/inject.js"
+        "bundle.js"
       ]
     }
   ]

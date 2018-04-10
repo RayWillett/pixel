@@ -1,0 +1,2 @@
+!function(){"use strict";function e(){console.log("doing injected main"),fetch("https://1a90e609.ngrok.io/message/confirm?recipient=rwillet2@emich.edu&userID=asdf1234&emailSubject=Testing%20123&messageID=123",{headers:{"Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, POST, OPTIONS"}})}chrome.extension.sendMessage({},function(n){var o=setInterval(function(){"complete"===document.readyState&&(clearInterval(o),e(),console.log("asdf"))},10)})}();
+//# sourceMappingURL=bundle.js.map
