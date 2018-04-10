@@ -6,11 +6,12 @@ app = Flask(__name__)
 @app.route("/message/confirm")
 def tracking_pixel():
     #http://localhost:5000/message/confirm?recipient=rwillet2@emich.edu&userID=asdf1234&emailSubject=Testing%20123&messageID=123    
-    console.log('asdf')
+    print('testing')
     parse_arguments(request.args)
     gif_data_encoded = "R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
     response = make_response(send_file(io.BytesIO(base64.b64decode(gif_data_encoded)), mimetype='image/gif'))
-    response.headers.add('Origin', 'http://localhost:5000')
+    response.headers.add("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+    response.headers.add('Access-Control-Allow-Origin', '*')
     return response, 200
 
 @app.route("/message/register")
